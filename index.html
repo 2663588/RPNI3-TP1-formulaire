@@ -1,21 +1,141 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FournierMichael_TP1_formulaire</title>
-  </head>
-  <body>
-  
-  <h1 class="text-4xl font-bold text-blue-600">Hello World!</h1>
 
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oxfam Canada -FournierMichael_TP1_formulaire</title>
+</head>
+
+<body>
 
 
-    
-    
-  </body>
+  <div id="app"></div>
+
+  <form>
+
+    <fieldset data-etape="1">
+      <div>
+        <p>PROGRESSION — 1 ÉTAPE SUR 4</p>
+      </div>
+      <div class="w-full bg-white-200 h-2 rounded border-1 border-black overflow-hidden" role="progressbar"
+        aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
+        <div class="h-full bg-green-800 h-2 rounded" style="width: 25%;"></div>
+      </div>
+
+      <br><br>
+      <legend>Étape 1 — Type et montant du don</legend>
+      <fieldset>
+        <legend>Type de don</legend>
+
+        <input type="radio" id="don-unique" name="type-don" value="unique" required>
+        <label for="don-unique">Don unique</label>
+
+        <input type="radio" id="don-mensuel" name="type-don" value="mensuel">
+        <label for="don-mensuel">Don mensuel</label>
+      </fieldset>
+
+      <br><br>
+      <!-- 50$ montant -->
+      <fieldset>
+        <legend class="sr-only">Montant du don</legend>
+        <div>
+          <input type="radio" id="montant-50" name="montant" value="50" class="peer sr-only">
+          <label for="montant-50"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">50
+            $</label>
+
+        </div>
+
+        <!-- 100$ montant -->
+        <div><input type="radio" id="montant-100" name="montant" value="100" class="peer sr-only">
+          <label for="montant-100"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">100
+            $</label> </div>
+
+        <!-- 250$ montant -->
+        <div>
+          <input type="radio" id="montant-250" name="montant" value="250" class="peer sr-only">
+          <label for="montant-250"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">250
+            $</label>
+        </div>
+
+        <!-- 500$ montant -->
+        <div> <input type="radio" id="montant-500" name="montant" value="500" class="peer sr-only">
+          <label for="montant-500"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">500
+            $</label>
+
+          <div>
+            <input type="radio" id="montant-autre" name="montant" value="autre" class="peer sr-only">
+            <label for="montant-autre"
+              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">
+              Autre montant
+            </label>
+          </div>
+
+          <div id="conteneur-autre-montant">
+            <label for="autre-montant-valeur">Précisez le montant</label>
+            <input type="number" id="autre-montant-valeur" name="autre-montant-valeur" min="5" max="1000000000" step="1"
+              placeholder="0 $">
+          </div>
+
+        </div>
+      </fieldset>
+
+      <br><br>
+      <button type="button" id="suivant1">Suivant</button>
+      <br><br>
+    </fieldset>
+
+
+
+
+
+    <fieldset data-etape="2">
+      <div>
+        <p>PROGRESSION — 2 ÉTAPES SUR 4</p>
+      </div>
+      <div class="w-full bg-white-200 h-2 rounded border-1 border-black overflow-hidden" role="progressbar"
+        aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
+        <div class="h-full bg-green-800 h-2 rounded" style="width: 50%;"></div>
+      </div>
+      <legend>Étape 2 — Informations de contact</legend>
+    </fieldset>
+
+
+
+    <fieldset data-etape="3">
+      <div>
+        <p>PROGRESSION — 3 ÉTAPES SUR 4</p>
+      </div>
+      <div class="w-full bg-white-200 h-2 rounded border-1 border-black overflow-hidden" role="progressbar"
+        aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
+        <div class="h-full bg-green-800 h-2 rounded" style="width: 75%;"></div>
+      </div>
+      <legend>Étape 3 — Informations de paiement</legend>
+    </fieldset>
+
+
+
+
+    <fieldset data-etape="4">
+      <div>
+        <p>PROGRESSION COMPLÉTÉE</p>
+      </div>
+      <div class="w-full bg-white-200 h-2 rounded border-1 border-black overflow-hidden" role="progressbar"
+        aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
+        <div class="h-full bg-green-800 h-2 rounded" style="width: 100%;"></div>
+      </div>
+      <legend>Étape 4 — Confirmation</legend>
+    </fieldset>
+  </form>
+
+
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
-
