@@ -6,3 +6,8 @@ function initialiser(){
 }
 
 initialiser();
+
+function naviguerEtape(){
+
+   
+}
