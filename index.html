@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oxfam Canada -FournierMichael_TP1_formulaire</title>
+  <title>Oxfam Canada - FournierMichael_TP1_formulaire</title>
 </head>
 
 
@@ -16,8 +16,9 @@
 
   <div id="app"></div>
 
-  
-<!-- PREMIÈRE PAGE -->
+
+
+  <!-- PREMIÈRE PAGE -->
   <form class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
     <header class="flex items-center gap-4">
@@ -25,18 +26,23 @@
       <h1 class="font-bold italic text-2xl">Oxfam — Faire un don</h1>
     </header>
 
+    <nav aria-label="Étapes du don">
+      <ol class="flex justify-between italic font-light text-sm">
+        <li><button type="button" data-cible-etape="1">1. TYPE ET MONTANT</button></li>
+        <li><button type="button" data-cible-etape="2">2. COORDONNÉES</button></li>
+        <li><button type="button" data-cible-etape="3">3. PAIEMENT</button></li>
+        <li><button type="button" data-cible-etape="4">4. CONFIRMATION</button></li>
+
+      </ol>
+      <div class="w-full bg-white-200 h-2 rounded border-2 border-black overflow-hidden" role="progressbar"
+        aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
+        <div class="h-full bg-green-800 h-2 rounded" style="width: 25%;"></div>
+    </nav>
+
 
     <fieldset data-etape="1" class="space-y-4">
 
       <legend class="font-bold text-2xl">Étape 1 — Type et montant du don</legend>
-
-      <div class="space-y-1">
-        <p class="italic font-light">PROGRESSION — 1 ÉTAPE SUR 4</p>
-        <div class="w-full bg-white-200 h-2 rounded border-2 border-black overflow-hidden" role="progressbar"
-          aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
-          <div class="h-full bg-green-800 h-2 rounded" style="width: 25%;"></div>
-        </div>
-      </div>
 
 
       <fieldset class="grid grid-cols-2 gap-2">
@@ -92,63 +98,52 @@
             class="block w-full border rounded p-4 text-center cursor-pointer focus:bg-green-800 focus:text-white focus:placeholder-white col-span-2">
         </div>
 
+
+
         <button type="button" id="continuer1"
           class="w-full bg-green-800 hover:bg-green-900 text-white font-bold py-3 rounded col-span-2">Continuer</button>
+
 
       </fieldset>
 
     </fieldset>
 
   </form>
-<!-- DEUXIÈME PAGE -->
-<form>
-
-  <fieldset data-etape="2">
-    <legend class="font-bold text-2xl">Étape 2 — Informations de contact</legend>
-    <div>
-      <p class="italic font-light">PROGRESSION — 2 ÉTAPES SUR 4</p>
-    </div>
-    <div class="w-full bg-white-200 h-2 rounded border-1 border-black overflow-hidden" role="progressbar"
-      aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
-      <div class="h-full bg-green-800 h-2 rounded" style="width: 50%;"></div>
-    </div>
+  <!-- DEUXIÈME PAGE -->
+  <form>
+<legend class="font-bold text-2xl">Étape 2 — Informations de contact</legend>
+    <fieldset data-etape="2">
+      
+      
+      </div>
 
 
 
-  </fieldset>
-</form>
-<!-- TROISIÈME PAGE -->
-<form>
-  
-  <fieldset data-etape="3">
-    <legend class="font-bold text-2xl">Étape 3 — Informations de paiement</legend>
-    <div>
-      <p class="italic font-light">PROGRESSION — 3 ÉTAPES SUR 4</p>
-    </div>
-    <div class="w-full bg-white-200 h-2 rounded border-1 border-black overflow-hidden" role="progressbar"
-      aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
-      <div class="h-full bg-green-800 h-2 rounded" style="width: 75%;"></div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </form>
+  <!-- TROISIÈME PAGE -->
+  <form>
+<legend class="font-bold text-2xl">Étape 3 — Informations de paiement</legend>
+    <fieldset data-etape="3">
+      
+    
+    </fieldset>
 
   </form>
 
 
   <!-- QUATRIÈME PAGE -->
   <form>
-
-  <fieldset data-etape="4">
     <legend class="font-bold text-2xl">Étape 4 — Confirmation</legend>
-    <div>
-      <p class="italic font-light">PROGRESSION COMPLÉTÉE</p>
-    </div>
-    <div class="w-full bg-white-200 h-2 rounded border-1 border-black overflow-hidden" role="progressbar"
-      aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
-      <div class="h-full bg-green-800 h-2 rounded" style="width: 100%;"></div>
-    </div>
-  </fieldset>
 
-</form>
+    <fieldset data-etape="4">
+     
+    </fieldset>
+
+  </form>
+
+
+
 
   <script type="module" src="/src/main.ts"></script>
 </body>
