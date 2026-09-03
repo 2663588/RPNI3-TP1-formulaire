@@ -38,7 +38,7 @@
   </div>
 
 
-  <form>
+  <form class="text-xl">
 
 
     <!-- PREMIÈRE PAGE -->
@@ -53,14 +53,18 @@
 
 
         <fieldset class="grid grid-cols-2 gap-2">
-          <legend class="font-bold">Type de don</legend>
-          <div class="flex items-center gap-2 p-2">
-            <input type="radio" id="don-unique" name="type-don" value="unique" required>
+          <legend class="font-bold p-2">Type de don</legend>
+
+
+          <div class="flex items-center gap-2 border rounded p-4">
+            <input type="radio" id="don-unique" name="type-don" value="unique" required
+              class="w-5 h-5 border-2 border-oxfam-vert accent-oxfam-vert">
             <label for="don-unique">Don unique</label>
           </div>
 
-          <div class="flex items-center gap-2">
-            <input type="radio" id="don-mensuel" name="type-don" value="mensuel">
+          <div class="flex items-center gap-2 border rounded p-4">
+            <input type="radio" id="don-mensuel" name="type-don" value="mensuel"
+              class="w-5 h-5 border-2 border-oxfam-vert accent-oxfam-vert">
             <label for="don-mensuel">Don mensuel</label>
           </div>
         </fieldset>
@@ -73,42 +77,42 @@
           <div>
             <input type="radio" id="montant-50" name="montant" value="50" class="peer sr-only">
             <label for="montant-50"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">50
+              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">50
               $</label>
           </div>
 
           <!-- 100$ montant -->
           <div><input type="radio" id="montant-100" name="montant" value="100" class="peer sr-only">
             <label for="montant-100"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">100
+              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">100
               $</label> </div>
 
           <!-- 250$ montant -->
           <div>
             <input type="radio" id="montant-250" name="montant" value="250" class="peer sr-only">
             <label for="montant-250"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">250
+              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">250
               $</label>
           </div>
 
           <!-- 500$ montant -->
           <div> <input type="radio" id="montant-500" name="montant" value="500" class="peer sr-only">
             <label for="montant-500"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-green-800 peer-checked:text-white">500
+              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">500
               $</label>
           </div>
 
           <div class="col-span-2">
-            <label for="autre-montant-valeur" class="sr-only">Autre montant</label>
+            <label for="autre-montant-valeur" class="sr-only text-2xl">Autre montant</label>
             <input type="number" id="autre-montant-valeur" name="montant-autre-valeur" min="5" max="1000000000" step="1"
               placeholder="Autre montant"
-              class="block w-full border rounded p-4 text-center cursor-pointer focus:bg-green-800 focus:text-white focus:placeholder-white col-span-2">
+              class="block w-full border rounded p-4 text-center cursor-pointer focus:bg-oxfam-vert focus:text-white focus:placeholder-white col-span-2">
           </div>
 
 
 
           <button type="button" id="continuer1"
-            class="w-full bg-green-800 hover:bg-green-900 text-white font-bold py-3 rounded col-span-2">Continuer</button>
+            class="w-full bg-green-800 hover:bg-green-900 text-white font-bold py-3 rounded col-span-2 text-xl">Continuer</button>
 
 
         </fieldset>
@@ -117,22 +121,138 @@
 
     </section>
     <!-- DEUXIÈME PAGE -->
-    <section>
+    <section class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
       <fieldset data-etape="2" class="space-y-4">
         <legend class="font-bold text-2xl">Étape 2 — Informations de contact</legend>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="nom-complet" class="font-bold">Nom</label>
+            <input type="text" id="nom-complet" name="nom-complet" required autocomplete="name" minlength="2"
+              maxlength="100" pattern="^[a-zA-ZÀ-ÿ]+$" class="block w-full border rounded p-2">
+          </div>
+
+          <div>
+            <label for="adresse" class="font-bold">Adresse</label>
+            <input type="text" id="adresse" name="adresse" required autocomplete="street-address"
+              pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" class="block w-full border rounded p-2">
+          </div>
+
+          <div>
+            <label for="courriel" class="font-bold">Courriel</label>
+            <input type="email" id="courriel" name="courriel" required autocomplete="email"
+              class="block w-full border rounded p-2">
+          </div>
+
+          <div>
+            <label for="telephone" class="font-bold">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" required autocomplete="tel"
+              pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$" class="block w-full border rounded p-2">
+          </div>
+        </div>
 
 
-
+        <div class="flex gap-2">
+          <button type="button" id="retour2" class="w-full border border-black font-bold py-3 rounded">Retour</button>
+          <button type="button" id="continuer2"
+            class="w-full bg-green-800 hover:bg-green-900 text-white font-bold py-3 rounded">Continuer</button>
+        </div>
 
 
       </fieldset>
     </section>
     <!-- TROISIÈME PAGE -->
-    <section>
+    <section class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
       <fieldset data-etape="3" class="space-y-4">
         <legend class="font-bold text-2xl">Étape 3 — Informations de paiement</legend>
+
+        <div class="space-y-4">
+          <div>
+            <label for="nom-carte" class="font-bold">Nom sur la carte</label>
+            <input type="text" id="nom-carte" name="nom-carte" required autocomplete="cc-name"
+              pattern="^[a-zA-ZÀ-ÿ '\-]+$" class="block w-full border rounded p-2">
+          </div>
+
+          <div>
+            <label for="numero-carte" class="font-bold">Numéro de carte</label>
+            <input type="text" id="numero-carte" name="numero-carte" required autocomplete="cc-number"
+              inputmode="numeric" pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
+              placeholder="1234 5678 9012 3456" class="block w-full border rounded p-2">
+          </div>
+
+
+
+
+          <!-- Message erreur en bas (COMPLETER EN TYPESCRIPT)-->
+
+          <div>
+            <label for="numero-carte" class="font-bold">Numéro de carte</label>
+            <input type="text" id="numero-carte" name="numero-carte" required aria-describedby="err-numero-carte"
+              autocomplete="cc-number" inputmode="numeric" pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
+              class="block w-full border rounded p-2">
+            <span id="err-numero-carte" role="alert" class="text-red-700 font-bold text-sm"></span>
+          </div>
+
+          <!-- Message erreur en haut (COMPLETER EN TYPESCRIPT)-->
+
+
+
+
+
+          <div class="grid grid-cols-3 gap-2">
+            <div>
+              <label for="mois-expiration" class="font-bold">Mois</label>
+              <select id="mois-expiration" name="mois-expiration" required autocomplete="cc-exp-month"
+                class="block w-full border rounded p-2">
+                <option value="">--</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="02">03</option>
+                <option value="02">04</option>
+                <option value="02">05</option>
+                <option value="02">06</option>
+                <option value="02">07</option>
+                <option value="02">08</option>
+                <option value="02">09</option>
+                <option value="02">10</option>
+                <option value="02">11</option>
+                <option value="02">12</option>
+
+              </select>
+            </div>
+
+            <div>
+              <label for="annee-expiration" class="font-bold">Année</label>
+              <select id="annee-expiration" name="annee-expiration" required autocomplete="cc-exp-year"
+                class="block w-full border rounded p-2">
+                <option value="">--</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2027">2028</option>
+                <option value="2027">2029</option>
+                <option value="2027">2030</option>
+                <option value="2027">2031</option>
+                <option value="2027">2032</option>
+                <option value="2027">2033</option>
+                <option value="2027">2034</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="cvc" class="font-bold">CVC</label>
+              <input type="text" id="cvc" name="cvc" required autocomplete="cc-csc" inputmode="numeric"
+                pattern="^[0-9]{3,4}$" maxlength="4" class="block w-full border rounded p-2">
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <button type="button" id="retour3" class="w-full border border-black font-bold py-3 rounded">Retour</button>
+          <button type="submit" id="soumettre3"
+            class="w-full bg-pink-700 hover:bg-pink-800 text-white font-bold py-3 rounded">Faire le don</button>
+        </div>
+
 
       </fieldset>
 
@@ -140,13 +260,41 @@
 
 
     <!-- QUATRIÈME PAGE -->
-    <section>
+    <section class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
 
       <fieldset data-etape="4" class="space-y-4">
         <legend class="font-bold text-2xl">Étape 4 — Confirmation</legend>
 
+        <div class="text-center space-y-4">
+          <div class="flex justify-center">
 
+
+          </div>
+
+          <h2 class="font-bold text-2xl">Merci pour votre don !</h2>
+
+          <p role="status" aria-live="polite">
+
+            Merci sincèrement pour votre généreux don à Oxfam.
+
+            Votre soutien contribue concrètement à bâtir un monde plus juste et solidaire.
+
+            Un reçu de confirmation vous sera envoyé par courriel sous peu.
+
+          </p>
+        </div>
+
+        <div class="border rounded p-4 space-y-2 bg-oxfam-creme">
+          <h3 class="font-bold">Résumé de votre don:</h3>
+          <p><span class="font-bold">Montant :</span> <span id="resume-montant">—</span></p>
+          <p><span class="font-bold">Type :</span> <span id="resume-type">—</span></p>
+        </div>
+
+        <div class="flex justify-center">
+          <button type="button" id="retour4" class="border border-black font-bold py-3 px-6 rounded">Retour à
+            l'accueil</button>
+        </div>
 
 
 

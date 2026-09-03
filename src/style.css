@@ -1,1 +1,10 @@
+
 @import "tailwindcss";
+
+@theme {
+  --color-oxfam-creme: #EAEADE;
+  --color-oxfam-jaune: #FBC43A;
+  --color-oxfam-rose: #DA0146;
+  --color-oxfam-vert-fonce: #336114;
+  --color-oxfam-vert: #44841A;
+}
