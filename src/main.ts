@@ -30,4 +30,18 @@ function naviguerEtape(nouvelleEtape: number) {
         }
     });
 
+    document.getElementById("continuer1")?.addEventListener("click", () => {
+        naviguerEtape(2);
+    });
+
+    document.getElementById("retour2")?.addEventListener("click", () => {
+        naviguerEtape(1);
+    });
+
+    const barre = document.getElementById("barre-progression");
+    if (barre) {
+        barre.style.width = (nouvelleEtape / 4 * 100) + "%";
+
+    }
+
 }
