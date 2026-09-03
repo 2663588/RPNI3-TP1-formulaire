@@ -2,6 +2,18 @@ import './style.css'
 function initialiser() {
 
     console.log("initialiser()");
+    naviguerEtape(1);
+
+
+    document.querySelectorAll("[data-cible-etape]").forEach((bouton) => {
+
+        bouton.addEventListener("click", () => {
+            const cible = Number(bouton.getAttribute("data-cible-etape"));
+            naviguerEtape(cible);
+
+        });
+
+    });
 
 }
 
