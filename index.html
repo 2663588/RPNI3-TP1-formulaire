@@ -19,11 +19,11 @@
   <div class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4 mb-4">
     <header class="flex items-center gap-4">
       <img src="/favicon.svg" alt="Oxfam Canada" class="w-16 h-auto">
-      <h1 class="font-bold italic text-2xl">Oxfam — Faire un don</h1>
+      <h1 class="font-bold italic text-[22px]">Oxfam — Faire un don</h1>
     </header>
 
     <nav aria-label="Étapes du don">
-      <ol class="flex justify-between italic font-light text-sm">
+      <ol class="flex justify-between italic font-light text-[9px] nav-etapes-texte">
         <li><button type="button" data-cible-etape="1">1. TYPE ET MONTANT</button></li>
         <li><button type="button" data-cible-etape="2">2. COORDONNÉES</button></li>
         <li><button type="button" data-cible-etape="3">3. PAIEMENT</button></li>
@@ -52,17 +52,13 @@
         <legend class="font-bold text-2xl">Étape 1 — Type et montant du don</legend>
 
         <legend class="font-bold">Type du don</legend>
-        <fieldset class="grid grid-cols-2 gap-2">
-
-
-
-          <div class="flex items-center gap-2 border rounded p-4">
+        <fieldset class="grid grid-cols-1 gap-2">
+          <div class="flex items-center gap-2 border rounded p-2">
             <input type="radio" id="don-unique" name="type-don" value="unique" required
               class="w-5 h-5 border-2 border-oxfam-vert accent-oxfam-vert">
             <label for="don-unique">Don unique</label>
           </div>
-
-          <div class="flex items-center gap-2 border rounded p-4">
+          <div class="flex items-center gap-2 border rounded p-2">
             <input type="radio" id="don-mensuel" name="type-don" value="mensuel"
               class="w-5 h-5 border-2 border-oxfam-vert accent-oxfam-vert">
             <label for="don-mensuel">Don mensuel</label>
@@ -85,7 +81,8 @@
           <div><input type="radio" id="montant-100" name="montant" value="100" class="peer sr-only">
             <label for="montant-100"
               class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">100
-              $</label> </div>
+              $</label>
+          </div>
 
           <!-- 250$ montant -->
           <div>
@@ -103,11 +100,11 @@
           </div>
 
           <div class="grid col-span-2">
-  <label for="autre-montant-valeur" class="font-bold block mb-2">Autre montant</label>
-  <input type="number" id="autre-montant-valeur" name="montant-autre-valeur" min="5" max="1000000000" step="1"
-    placeholder="0 $"
-    class="block w-full border rounded p-4 text-left focus:bg-oxfam-vert focus:text-white focus:placeholder-white">
-</div>
+            <label for="autre-montant-valeur" class="font-bold block mb-2">Autre montant</label>
+            <input type="number" id="autre-montant-valeur" name="montant-autre-valeur" min="5" max="1000000000" step="1"
+              placeholder="0 $"
+              class="block w-full border rounded p-4 text-left focus:bg-oxfam-vert focus:text-white focus:placeholder-white">
+          </div>
 
 
 
@@ -116,7 +113,7 @@
 
 
         </fieldset>
-        
+
 
       </fieldset>
 
@@ -128,7 +125,7 @@
 
       <fieldset class="space-y-4">
         <legend class="font-bold text-2xl">Étape 2 — Informations de contact</legend>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 gap-4">
           <div>
             <label for="nom-complet" class="font-bold">Nom</label>
             <input type="text" id="nom-complet" name="nom-complet" required autocomplete="name" minlength="2"
@@ -156,7 +153,8 @@
 
 
         <div class="flex gap-2">
-          <button type="button" id="retour2" class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
+          <button type="button" id="retour2"
+            class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
           <button type="button" id="continuer2"
             class="w-full bg-oxfam-vert-fonce hover:bg-green-900 text-white font-bold py-3 rounded">Continuer</button>
         </div>
@@ -253,7 +251,8 @@
         </div>
 
         <div class="flex gap-2">
-          <button type="button" id="retour3" class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
+          <button type="button" id="retour3"
+            class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
           <button type="submit" id="soumettre3"
             class="w-full bg-oxfam-rose hover:bg-pink-800 text-white font-bold py-3 rounded">Faire le don</button>
         </div>
@@ -297,7 +296,9 @@
         </div>
 
         <div class="flex justify-center">
-          <button type="button" id="retour4" class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white active:bg-black active:text-white">Retour à
+          <button type="button" id="retour4"
+            class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white active:bg-black active:text-white">Retour
+            à
             l'accueil</button>
         </div>
 

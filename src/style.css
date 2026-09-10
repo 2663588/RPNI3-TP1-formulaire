@@ -9,3 +9,34 @@
   --color-oxfam-vert: #44841A;
 }
 
+
+
+
+/* Styles desktop pour PC (1200px et plus) */
+@media (min-width: 1024px) {
+  
+  .max-w-xl {
+    max-width: 42rem;
+  }
+
+  .p-4 {
+    padding: 1.5rem;
+  }
+
+  .space-y-4 > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .gap-2 {
+    gap: 1rem;
+  }
+
+  .gap-4 {
+    gap: 1.5rem;
+  }
+
+  .nav-etapes-texte {
+    font-size: 1rem;
+  }
+}
+
