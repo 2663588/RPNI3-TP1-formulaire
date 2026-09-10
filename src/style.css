@@ -11,12 +11,15 @@
 
 
 
-
-/* Styles desktop pour PC (1200px et plus) */
-@media (min-width: 1024px) {
-  
-  .max-w-xl {
+/* Styles desktop pour PC (360px et plus) */
+@media screen and (min-width: 360px){
+.max-w-xl {
     max-width: 42rem;
+  }
+
+  body {
+    padding-left: 8.33%;
+    padding-right: 8.33%;
   }
 
   .p-4 {
@@ -39,4 +42,5 @@
     font-size: 1rem;
   }
 }
+
 
