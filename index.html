@@ -53,12 +53,14 @@
 
         <legend class="font-bold">Type du don</legend>
         <fieldset class="grid grid-cols-1 gap-2">
-          <div class="flex items-center gap-2 border rounded p-2">
+          <div
+            class="flex items-center gap-2 border rounded p-2 has-[:checked]:bg-oxfam-vert has-[:checked]:text-white">
             <input type="radio" id="don-unique" name="type-don" value="unique" required
               class="w-5 h-5 border-2 border-oxfam-vert accent-oxfam-vert">
             <label for="don-unique">Don unique</label>
           </div>
-          <div class="flex items-center gap-2 border rounded p-2">
+          <div
+            class="flex items-center gap-2 border rounded p-2 has-[:checked]:bg-oxfam-vert has-[:checked]:text-white">
             <input type="radio" id="don-mensuel" name="type-don" value="mensuel"
               class="w-5 h-5 border-2 border-oxfam-vert accent-oxfam-vert">
             <label for="don-mensuel">Don mensuel</label>
@@ -128,26 +130,40 @@
         <div class="grid grid-cols-1 gap-4">
           <div>
             <label for="nom-complet" class="font-bold">Nom</label>
-            <input type="text" id="nom-complet" name="nom-complet" required autocomplete="name" minlength="2"
-              maxlength="100" pattern="^[a-zA-ZÀ-ÿ]+$" class="block w-full border rounded p-2">
+            <input aria-describedby="erreur-nom-complet" type="text" id="nom-complet" name="nom-complet" required
+              autocomplete="name" minlength="2" maxlength="100" pattern="^[a-zA-ZÀ-ÿ]+$"
+              class="block w-full border rounded p-2">
+            <span id="erreur-nom-complet" role="alert" class="text-red-700 text-sm"></span>
+          </div>
+
+          <div>
+            <label for="prenom-complet" class="font-bold">Prénom</label>
+            <input aria-describedby="erreur-prenom-complet" type="text" id="prenom-complet" name="prenom-complet" required
+              autocomplete="given-name" minlength="2" maxlength="100" pattern="^[a-zA-ZÀ-ÿ]+$"
+              class="block w-full border rounded p-2">
+            <span id="erreur-prenom-complet" role="alert" class="text-red-700 text-sm"></span>
           </div>
 
           <div>
             <label for="adresse" class="font-bold">Adresse</label>
-            <input type="text" id="adresse" name="adresse" required autocomplete="street-address"
-              pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" class="block w-full border rounded p-2">
+            <input aria-describedby="erreur-adresse" type="text" id="adresse" name="adresse" required
+              autocomplete="street-address" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$"
+              class="block w-full border rounded p-2">
+            <span id="erreur-adresse" role="alert" class="text-red-700 text-sm"></span>
           </div>
 
           <div>
             <label for="courriel" class="font-bold">Courriel</label>
-            <input type="email" id="courriel" name="courriel" required autocomplete="email"
-              class="block w-full border rounded p-2">
+            <input aria-describedby="erreur-courriel" type="email" id="courriel" name="courriel" required
+              autocomplete="email" class="block w-full border rounded p-2">
+            <span id="erreur-courriel" role="alert" class="text-red-700 text-sm"></span>
           </div>
 
           <div>
             <label for="telephone" class="font-bold">Téléphone</label>
-            <input type="tel" id="telephone" name="telephone" required autocomplete="tel"
+            <input aria-describedby="erreur-telephone" type="tel" id="telephone" name="telephone" required autocomplete="tel"
               pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$" class="block w-full border rounded p-2">
+            <span id="erreur-telephone" role="alert" class="text-red-700 text-sm"></span>
           </div>
         </div>
 
@@ -173,31 +189,22 @@
         <div class="space-y-4">
           <div>
             <label for="nom-carte" class="font-bold">Nom sur la carte</label>
-            <input type="text" id="nom-carte" name="nom-carte" required autocomplete="cc-name"
-              pattern="^[a-zA-ZÀ-ÿ '\-]+$" class="block w-full border rounded p-2">
+            <input aria-describedby="erreur-nom-carte" type="text" id="nom-carte" name="nom-carte" required
+              autocomplete="cc-name" pattern="^[a-zA-ZÀ-ÿ '\-]+$" class="block w-full border rounded p-2">
+            <span id="erreur-nom-carte" role="alert" class="text-red-700 text-sm"></span>
           </div>
 
           <div>
             <label for="numero-carte" class="font-bold">Numéro de carte</label>
-            <input type="text" id="numero-carte" name="numero-carte" required autocomplete="cc-number"
-              inputmode="numeric" pattern="^[6][0-9]{3}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
+            <input aria-describedby="erreur-numero-carte" type="text" id="numero-carte" name="numero-carte" required
+              autocomplete="cc-number" inputmode="numeric" pattern="^[6][0-9]{3}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
               placeholder="1234 5678 9012 3456" class="block w-full border rounded p-2">
+            <span id="erreur-numero-carte" role="alert" class="text-red-700 text-sm"></span>
           </div>
 
 
 
 
-          <!-- Message erreur en bas (COMPLETER EN TYPESCRIPT)
-
-          <div>
-            <label for="numero-carte" class="font-bold">Numéro de carte</label>
-            <input type="text" id="numero-carte" name="numero-carte" required aria-describedby="err-numero-carte"
-              autocomplete="cc-number" inputmode="numeric" pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
-              class="block w-full border rounded p-2">
-            <span id="err-numero-carte" role="alert" class="text-red-700 font-bold text-sm"></span>
-          </div>
-
-          -->
 
 
 
@@ -244,8 +251,9 @@
 
             <div>
               <label for="cvc" class="font-bold">CVC</label>
-              <input type="text" id="cvc" name="cvc" required autocomplete="cc-csc" inputmode="numeric"
-                pattern="^[0-9]{3,4}$" maxlength="4" class="block w-full border rounded p-2">
+              <input aria-describedby="erreur-cvc" type="text" id="cvc" name="cvc" required autocomplete="cc-csc"
+                inputmode="numeric" pattern="^[0-9]{3,4}$" maxlength="4" class="block w-full border rounded p-2">
+              <span id="erreur-cvc" role="alert" class="text-red-700 text-sm"></span>
             </div>
           </div>
         </div>

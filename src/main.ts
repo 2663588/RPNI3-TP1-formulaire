@@ -1,4 +1,28 @@
 import './style.css'
+
+
+
+//message d'erreurs
+interface messageErreur {
+    vide?: string;
+    pattern?: string;
+    type?: string;
+}
+interface erreursJSON {
+    [fieldName: string]: messageErreur;
+}
+let messagesJSON: erreursJSON;
+
+async function chargerMessages() {
+    const reponse = await fetch('/objJSONMessages.json');
+    messagesJSON = await reponse.json();
+}
+
+chargerMessages().then(() => {
+    initialiser();
+});
+
+
 function initialiser() {
 
     console.log("initialiser()");
@@ -30,15 +54,52 @@ function initialiser() {
 
 
 
-    //afficherResume
+    //afficherResumeDuDon
     document.getElementById("soumettre3")?.addEventListener("click", (evenement) => {
         evenement.preventDefault();
-        afficherResume();
-        naviguerEtape(4);
+        if (validerEtape(3)) {
+            afficherResume();
+            naviguerEtape(4);
+        }
+    });
+
+
+
+    // Reinitialiser le formulaire au complet
+    document.getElementById("retour4")?.addEventListener("click", () => {
+        const monFormulaire = document.querySelector("form") as HTMLFormElement;
+        monFormulaire.reset();
+
+        const spanMontant = document.getElementById("resume-montant");
+        const spanType = document.getElementById("resume-type");
+        if (spanMontant) spanMontant.textContent = "—";
+        if (spanType) spanType.textContent = "—";
+
+        naviguerEtape(1);
+    });
+
+
+
+    //Changer de pages en pages 
+    document.getElementById("continuer1")?.addEventListener("click", () => {
+        naviguerEtape(2);
+    });
+
+    document.getElementById("retour2")?.addEventListener("click", () => {
+        naviguerEtape(1);
+    });
+    document.getElementById("continuer2")?.addEventListener("click", () => {
+        if (validerEtape(2)) {
+            naviguerEtape(3);
+        }
+    });
+
+    document.getElementById("retour3")?.addEventListener("click", () => {
+        naviguerEtape(2);
     });
 
 }
-initialiser();
+
 
 
 
@@ -67,21 +128,7 @@ function naviguerEtape(nouvelleEtape: number) {
         }
     });
 
-    document.getElementById("continuer1")?.addEventListener("click", () => {
-        naviguerEtape(2);
-    });
-
-    document.getElementById("retour2")?.addEventListener("click", () => {
-        naviguerEtape(1);
-    });
-    document.getElementById("continuer2")?.addEventListener("click", () => {
-        naviguerEtape(3);
-    });
-
-    document.getElementById("retour3")?.addEventListener("click", () => {
-        naviguerEtape(2);
-    });
-
+    //Animer la barre de progression 
     const barre = document.getElementById("barre-progression");
     if (barre) {
         barre.style.width = (nouvelleEtape / 4 * 100) + "%";
@@ -92,10 +139,10 @@ function naviguerEtape(nouvelleEtape: number) {
 
 
 
-    
+
 }
 
- //Faire le don et afficher le resumé page 4 !
+//Faire le don et afficher le resumé page 4 !
 function afficherResume() {
     const montantCoche = document.querySelector('input[name="montant"]:checked') as HTMLInputElement;
     const autreMontant = document.getElementById("autre-montant-valeur") as HTMLInputElement;
@@ -114,4 +161,83 @@ function afficherResume() {
     const spanType = document.getElementById("resume-type");
     if (spanMontant) spanMontant.textContent = montantAffiche;
     if (spanType) spanType.textContent = typeAffiche;
+}
+
+
+
+
+
+
+
+function validerChamp(champ: HTMLInputElement): boolean {
+    let valide = false;
+    const id = champ.id;
+    const idMessageErreur = "erreur-" + id;
+    const erreurElement = document.getElementById(idMessageErreur) as HTMLSpanElement;
+
+    if (champ.validity.valueMissing && messagesJSON[id]?.vide) {
+        valide = false;
+        champ.setAttribute("aria-invalid", "true");
+        if (erreurElement) erreurElement.textContent = messagesJSON[id].vide!;
+    }
+    else if (champ.validity.typeMismatch && messagesJSON[id]?.type) {
+        valide = false;
+        champ.setAttribute("aria-invalid", "true");
+        if (erreurElement) erreurElement.textContent = messagesJSON[id].type!;
+    }
+    else if (champ.validity.patternMismatch && messagesJSON[id]?.pattern) {
+        valide = false;
+        champ.setAttribute("aria-invalid", "true");
+        if (erreurElement) erreurElement.textContent = messagesJSON[id].pattern!;
+    }
+    else {
+        valide = true;
+        champ.setAttribute("aria-invalid", "false");
+        if (erreurElement) erreurElement.textContent = "";
+    }
+
+    return valide;
+}
+
+
+
+
+
+
+
+function validerEtape(etape: number): boolean {
+    let etapeValide = true;
+
+    if (etape === 2) {
+        const nomElement = document.getElementById('nom-complet') as HTMLInputElement;
+        const prenomElement = document.getElementById('prenom-complet') as HTMLInputElement;
+        const adresseElement = document.getElementById('adresse') as HTMLInputElement;
+        const courrielElement = document.getElementById('courriel') as HTMLInputElement;
+        const telephoneElement = document.getElementById('telephone') as HTMLInputElement;
+
+        const nomValide = validerChamp(nomElement);
+        const prenomValide = validerChamp(prenomElement);
+        const adresseValide = validerChamp(adresseElement);
+        const courrielValide = validerChamp(courrielElement);
+        const telephoneValide = validerChamp(telephoneElement);
+
+        etapeValide = nomValide && prenomValide && adresseValide && courrielValide && telephoneValide;
+    }
+
+    else if (etape === 3) {
+
+        const nomcarteElement = document.getElementById('nom-carte') as HTMLInputElement;
+        const numerocarteElement = document.getElementById('numero-carte') as HTMLInputElement;
+        const cvcElement = document.getElementById('cvc') as HTMLInputElement;
+
+
+        const nomcarteValide = validerChamp(nomcarteElement);
+        const numerocarteValide = validerChamp(numerocarteElement);
+        const cvcValide = validerChamp(cvcElement);
+
+
+        etapeValide = nomcarteValide && numerocarteValide && cvcValide;
+    }
+
+    return etapeValide;
 }

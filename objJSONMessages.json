@@ -1,9 +1,9 @@
 {
-    "prenom": {
+    "prenom-complet": {
         "vide": "Vous devez entrer votre prénom.",
         "pattern": "Pour le prénom, les accents français, les espaces, les tirets et les apostrophes sont permis."
     },
-    "nom": {
+    "nom-complet": {
         "vide": "Vous devez entrer votre nom de famille.",
         "pattern": "Pour le nom de famille, les accents français, les espaces, les tirets et les apostrophes sont permis."
     },
@@ -12,11 +12,24 @@
         "pattern": "Assurez-vous d'entrer une adresse courriel valide.",
         "type": "Assurez-vous d'entrer une adresse courriel."
     },
-    "sujet": {
-        "vide": "Vous devez entrer un sujet.",
-        "pattern": "Entrez une sujet valide."
+    "telephone": {
+        "vide": "Veuillez entrer votre numéro de téléphone.",
+        "pattern": "Veuillez entrer un numéro de téléphone valide. "
     },
-    "message": {
-        "vide": "Entrez un message."
+    "adresse": {
+        "vide": "Veuillez entrer votre adresse.",
+        "pattern": "Veuillez entrer une adresse valide."
+    },
+    "nom-carte": {
+        "vide": "Veuillez entrer le nom sur la carte.",
+        "pattern": "Veuillez entrer un nom valide."
+    },
+    "numero-carte": {
+        "vide": "Veuillez entrer le numéro de carte.",
+        "pattern": "Veuillez entrer un numéro de carte valide."
+    },
+    "cvc": {
+        "vide": "Veuillez entrer le code CVC.",
+        "pattern": "Veuillez entrer un code CVC valide."
     }
 }
