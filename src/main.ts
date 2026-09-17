@@ -228,6 +228,26 @@ function validerGroupeRadio(nomGroupe: string, idErreur: string): boolean {
     }
 }
 
+//Valider montant entré page 1
+function validerMontant(): boolean {
+    const montantCoche = document.querySelector('input[name="montant"]:checked');
+    const autreMontant = document.getElementById("autre-montant-valeur") as HTMLInputElement;
+    const erreurElement = document.getElementById("erreur-montant");
+    const icone = document.getElementById("icone-erreur-montant");
+
+    const autreMontantRempli = autreMontant && autreMontant.value.trim() !== "";
+
+    if (!montantCoche && !autreMontantRempli) {
+        if (erreurElement) erreurElement.textContent = messagesJSON["montant"]?.vide || "Veuillez sélectionner un montant.";
+        icone?.classList.remove("hidden");
+        return false;
+    } else {
+        if (erreurElement) erreurElement.textContent = "";
+        icone?.classList.add("hidden");
+        return true;
+    }
+}
+
 
 
 
@@ -239,7 +259,7 @@ function validerEtape(etape: number): boolean {
 
     if (etape === 1) {
         const typeDonValide = validerGroupeRadio("type-don", "erreur-type-don");
-        const montantValide = validerGroupeRadio("montant", "erreur-montant");
+        const montantValide = validerMontant();
         etapeValide = typeDonValide && montantValide;
     }
 

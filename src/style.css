@@ -8,6 +8,38 @@
   --color-oxfam-vert: #44841A;
 }
 
+.html .body {
+  width: 100%;
+  height: 100%;
+}
+
+/* affichage body complet */
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+
+  background: linear-gradient(-45deg, #000000, #EAEADE, #336114,#44841A);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
 
 
 h1 {
@@ -37,26 +69,14 @@ label {
 .titre-principal {
   letter-spacing: -0.02em;
   font-weight: 800;
- 
-   
+
+
 
 }
 
 /* enlever affichage barre progression de mobile quand c'est en desktop */
 .texte-desktop {
   display: none;
-}
-
-
-
-/* afficher Nunito Sans font */
-body {
-  font-family: "Nunito Sans", sans-serif;
-  background-image: url('/fond-oxfam.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
 }
 
 
@@ -73,15 +93,15 @@ input {
 
 
 
-
-
-
 /* Styles desktop pour PC (360px et plus) */
 @media screen and (min-width: 360px) {
 
+  .fieldset-type-don {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
   .max-w-xl {
-    max-width: 60rem;
+    max-width: 100rem;
   }
 
   body {
