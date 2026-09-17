@@ -9,13 +9,23 @@
   --color-oxfam-vert: #44841A;
 }
 
+/* enlever affichage barre progression de mobile quand c'est en desktop */
+.texte-desktop {
+  display: none;
+}
+
 
 
 /* Styles desktop pour PC (360px et plus) */
 @media screen and (min-width: 360px){
+
+
+
+
+
 .max-w-xl {
-    max-width: 42rem;
-  }
+  max-width: 60rem;
+}
 
   body {
     padding-left: 8.33%;
@@ -44,3 +54,19 @@
 }
 
 
+
+@media screen and (min-width: 630px){
+
+  .texte-mobile {
+    display: none;
+  }
+
+  .texte-desktop {
+    display: inline;
+  }
+
+  .nav-etapes-texte{
+    font-size: xx-small;
+  }
+
+}

@@ -18,17 +18,36 @@
 
   <div class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4 mb-4">
     <header class="flex items-center gap-4">
-      <img src="/favicon.svg" alt="Oxfam Canada" class="w-16 h-auto">
+      <img src="/favicon.svg" alt="Oxfam Canada" class="w-22 h-auto">
       <h1 class="font-bold italic text-[22px]">Oxfam — Faire un don</h1>
     </header>
 
     <nav aria-label="Étapes du don">
       <ol class="flex justify-between italic font-light text-[9px] nav-etapes-texte">
-        <li><button type="button" data-cible-etape="1">1. TYPE ET MONTANT</button></li>
-        <li><button type="button" data-cible-etape="2">2. COORDONNÉES</button></li>
-        <li><button type="button" data-cible-etape="3">3. PAIEMENT</button></li>
-        <li><button type="button" data-cible-etape="4">4. CONFIRMATION</button></li>
-
+        <li>
+          <button type="button" data-cible-etape="1">
+            <span class="texte-mobile ">Étape 1</span>
+            <span class="texte-desktop text-[15px]">1. TYPE ET MONTANT</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-cible-etape="2">
+            <span class="texte-mobile ">Étape 2</span>
+            <span class="texte-desktop text-[15px]">2. COORDONNÉES</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-cible-etape="3">
+            <span class="texte-mobile ">Étape 3</span>
+            <span class="texte-desktop text-[15px]">3. PAIEMENT</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-cible-etape="4">
+            <span class="texte-mobile ">Étape 4</span>
+            <span class="texte-desktop text-[15px]">4. CONFIRMATION</span>
+          </button>
+        </li>
       </ol>
       <div class="w-full bg-gray-200 h-2 rounded border-2 border-black overflow-hidden" role="progressbar"
         aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
@@ -305,8 +324,7 @@
 
         <div class="text-center space-y-4">
           <div class="flex justify-center">
-
-
+            <img src="/SVG/icone-confirmation.svg" class="w-30" alt="">
           </div>
 
           <h2 class="font-bold text-2xl">Merci pour votre don !</h2>
@@ -330,7 +348,7 @@
 
         <div class="flex justify-center">
           <button type="button" id="retour4"
-            class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white active:bg-black active:text-white">Retour
+            class="w-full border border-black font-bold py-3 rounded  hover:bg-yellow-500 bg-oxfam-jaune hover:text-black active:bg-oxfam-jaune">Retour
             à
             l'accueil</button>
         </div>
