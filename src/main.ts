@@ -174,26 +174,31 @@ function validerChamp(champ: HTMLInputElement): boolean {
     const id = champ.id;
     const idMessageErreur = "erreur-" + id;
     const erreurElement = document.getElementById(idMessageErreur) as HTMLSpanElement;
+    const icone = document.getElementById("icone-erreur-" + id);
 
     if (champ.validity.valueMissing && messagesJSON[id]?.vide) {
         valide = false;
         champ.setAttribute("aria-invalid", "true");
         if (erreurElement) erreurElement.textContent = messagesJSON[id].vide!;
+        icone?.classList.remove("hidden");
     }
     else if (champ.validity.typeMismatch && messagesJSON[id]?.type) {
         valide = false;
         champ.setAttribute("aria-invalid", "true");
         if (erreurElement) erreurElement.textContent = messagesJSON[id].type!;
+        icone?.classList.remove("hidden");
     }
     else if (champ.validity.patternMismatch && messagesJSON[id]?.pattern) {
         valide = false;
         champ.setAttribute("aria-invalid", "true");
         if (erreurElement) erreurElement.textContent = messagesJSON[id].pattern!;
+        icone?.classList.remove("hidden");
     }
     else {
         valide = true;
         champ.setAttribute("aria-invalid", "false");
         if (erreurElement) erreurElement.textContent = "";
+        icone?.classList.add("hidden");
     }
 
     return valide;

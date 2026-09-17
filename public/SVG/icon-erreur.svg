@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 251.7 251.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Dégradé_sans_nom_37);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+    <linearGradient id="Dégradé_sans_nom_37" data-name="Dégradé sans nom 37" x1=".5" y1="125.85" x2="251.2" y2="125.85" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ef7e7c"/>
+      <stop offset=".79" stop-color="#e6304e"/>
+      <stop offset="1" stop-color="#d90d3a"/>
+    </linearGradient>
+  </defs>
+  <g id="Calque_2-2" data-name="Calque 2">
+    <g>
+      <g>
+        <path class="cls-1" d="M251.2,125.85c0,69.23-56.12,125.35-125.35,125.35S.5,195.08.5,125.85,56.62.5,125.85.5s125.35,56.12,125.35,125.35Z"/>
+        <path d="M125.85,251.7C56.46,251.7,0,195.25,0,125.85S56.46,0,125.85,0s125.85,56.46,125.85,125.85-56.46,125.85-125.85,125.85ZM125.85,1C57.01,1,1,57.01,1,125.85s56.01,124.85,124.85,124.85,124.85-56.01,124.85-124.85S194.7,1,125.85,1Z"/>
+      </g>
+      <ellipse class="cls-2" cx="125.85" cy="96.38" rx="20.43" ry="67.66"/>
+      <circle class="cls-2" cx="125.85" cy="199.19" r="13.47"/>
+    </g>
+  </g>
+</svg>

@@ -133,15 +133,21 @@
             <input aria-describedby="erreur-nom-complet" type="text" id="nom-complet" name="nom-complet" required
               autocomplete="name" minlength="2" maxlength="100" pattern="^[a-zA-ZÀ-ÿ]+$"
               class="block w-full border rounded p-2">
-            <span id="erreur-nom-complet" role="alert" class="text-red-700 text-sm"></span>
+            <div class="flex items-center gap-1" id="conteneur-erreur-nom-complet">
+              <img src="public/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-nom-complet">
+              <span id="erreur-nom-complet" role="alert" class="text-red-700 text-sm"></span>
+            </div>
           </div>
 
           <div>
             <label for="prenom-complet" class="font-bold">Prénom</label>
-            <input aria-describedby="erreur-prenom-complet" type="text" id="prenom-complet" name="prenom-complet" required
-              autocomplete="given-name" minlength="2" maxlength="100" pattern="^[a-zA-ZÀ-ÿ]+$"
+            <input aria-describedby="erreur-prenom-complet" type="text" id="prenom-complet" name="prenom-complet"
+              required autocomplete="given-name" minlength="2" maxlength="100" pattern="^[a-zA-ZÀ-ÿ]+$"
               class="block w-full border rounded p-2">
-            <span id="erreur-prenom-complet" role="alert" class="text-red-700 text-sm"></span>
+            <div class="flex items-center gap-1" id="conteneur-erreur-prenom-complet">
+              <img src="public/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-prenom-complet">
+              <span id="erreur-prenom-complet" role="alert" class="text-red-700 text-sm"></span>
+            </div>
           </div>
 
           <div>
@@ -149,21 +155,31 @@
             <input aria-describedby="erreur-adresse" type="text" id="adresse" name="adresse" required
               autocomplete="street-address" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$"
               class="block w-full border rounded p-2">
-            <span id="erreur-adresse" role="alert" class="text-red-700 text-sm"></span>
+            <div class="flex items-center gap-1" id="conteneur-erreur-adresse">
+              <img src="public/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-adresse">
+              <span id="erreur-adresse" role="alert" class="text-red-700 text-sm"></span>
+            </div>
           </div>
 
           <div>
             <label for="courriel" class="font-bold">Courriel</label>
             <input aria-describedby="erreur-courriel" type="email" id="courriel" name="courriel" required
               autocomplete="email" class="block w-full border rounded p-2">
-            <span id="erreur-courriel" role="alert" class="text-red-700 text-sm"></span>
+            <div class="flex items-center gap-1" id="conteneur-erreur-courriel">
+              <img src="public/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-courriel">
+              <span id="erreur-courriel" role="alert" class="text-red-700 text-sm"></span>
+            </div>
           </div>
 
           <div>
             <label for="telephone" class="font-bold">Téléphone</label>
-            <input aria-describedby="erreur-telephone" type="tel" id="telephone" name="telephone" required autocomplete="tel"
-              pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$" class="block w-full border rounded p-2">
-            <span id="erreur-telephone" role="alert" class="text-red-700 text-sm"></span>
+            <input aria-describedby="erreur-telephone" type="tel" id="telephone" name="telephone" required
+              autocomplete="tel" pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$"
+              class="block w-full border rounded p-2">
+            <div class="flex items-center gap-1" id="conteneur-erreur-telephone">
+              <img src="public/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-telephone">
+              <span id="erreur-telephone" role="alert" class="text-red-700 text-sm"></span>
+            </div>
           </div>
         </div>
 
@@ -191,7 +207,10 @@
             <label for="nom-carte" class="font-bold">Nom sur la carte</label>
             <input aria-describedby="erreur-nom-carte" type="text" id="nom-carte" name="nom-carte" required
               autocomplete="cc-name" pattern="^[a-zA-ZÀ-ÿ '\-]+$" class="block w-full border rounded p-2">
-            <span id="erreur-nom-carte" role="alert" class="text-red-700 text-sm"></span>
+            <div class="flex items-center gap-1" id="conteneur-erreur-nom-carte">
+              <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-nom-carte">
+              <span id="erreur-nom-carte" role="alert" class="text-red-700 text-sm"></span>
+            </div>
           </div>
 
           <div>
@@ -199,7 +218,10 @@
             <input aria-describedby="erreur-numero-carte" type="text" id="numero-carte" name="numero-carte" required
               autocomplete="cc-number" inputmode="numeric" pattern="^[6][0-9]{3}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
               placeholder="1234 5678 9012 3456" class="block w-full border rounded p-2">
-            <span id="erreur-numero-carte" role="alert" class="text-red-700 text-sm"></span>
+            <div class="flex items-center gap-1" id="conteneur-erreur-numero-carte">
+              <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-numero-carte">
+              <span id="erreur-numero-carte" role="alert" class="text-red-700 text-sm"></span>
+            </div>
           </div>
 
 
@@ -253,7 +275,10 @@
               <label for="cvc" class="font-bold">CVC</label>
               <input aria-describedby="erreur-cvc" type="text" id="cvc" name="cvc" required autocomplete="cc-csc"
                 inputmode="numeric" pattern="^[0-9]{3,4}$" maxlength="4" class="block w-full border rounded p-2">
-              <span id="erreur-cvc" role="alert" class="text-red-700 text-sm"></span>
+              <div class="flex items-center gap-1" id="conteneur-erreur-cvc">
+                <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-cvc">
+                <span id="erreur-cvc" role="alert" class="text-red-700 text-sm"></span>
+              </div>
             </div>
           </div>
         </div>
