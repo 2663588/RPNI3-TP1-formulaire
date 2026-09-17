@@ -37,6 +37,9 @@ label {
 .titre-principal {
   letter-spacing: -0.02em;
   font-weight: 800;
+ 
+   
+
 }
 
 /* enlever affichage barre progression de mobile quand c'est en desktop */
@@ -75,9 +78,6 @@ input {
 
 /* Styles desktop pour PC (360px et plus) */
 @media screen and (min-width: 360px) {
-
-
-
 
 
   .max-w-xl {

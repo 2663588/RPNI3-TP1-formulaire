@@ -1,4 +1,13 @@
 {
+
+
+    "type-don": {
+        "vide": "Veuillez selectionner un type de don."
+    },
+    "montant": {
+        "vide": "Veuillez déclaré un montant de don."
+    },
+
     "prenom-complet": {
         "vide": "Veuillez entrer votre prénom.",
         "pattern": "Pour le prénom, les accents français, les espaces, les tirets et les apostrophes sont permis."
@@ -33,4 +42,9 @@
         "vide": "Veuillez entrer le code CVC.",
         "pattern": "Veuillez entrer un code CVC valide."
     }
+
+
+
+
+
 }

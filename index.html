@@ -20,7 +20,7 @@
   <div id="app"></div>
 
   <div class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4 mb-4">
-    <header class="flex items-center gap-4 border-b-2 border-oxfam-vert pb-4">
+    <header class="flex items-center gap-4 border-b-2 border-oxfam-vert-fonce pb-4">
       <img src="/favicon.svg" alt="Oxfam Canada" class="w-22 h-auto">
       <h1 class="font-bold italic text-[26px] titre-principal">OXFAM — FAIRE UN DON</h1>
 
@@ -76,7 +76,8 @@
         <legend class="font-bold text-2xl">Étape 1 — Type et montant du don</legend>
 
         <legend class="font-bold">Type du don</legend>
-        <fieldset class="grid grid-cols-1 gap-2">
+        <fieldset role="radiogroup" aria-required="true" aria-describedby="erreur-type-don"
+          class="grid grid-cols-1 gap-2">
           <div
             class="flex items-center gap-2 border rounded p-2 has-[:checked]:bg-oxfam-vert has-[:checked]:text-white">
             <input type="radio" id="don-unique" name="type-don" value="unique" required
@@ -90,58 +91,67 @@
             <label for="don-mensuel">Don mensuel</label>
           </div>
         </fieldset>
+        <div class="flex items-center gap-1" id="conteneur-erreur-type-don">
+          <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-type-don">
+          <span id="erreur-type-don" role="alert" class="text-red-700 text-sm"></span>
+        </div>
+      </fieldset>
 
 
-        <!-- 50$ montant -->
-        <legend class="font-bold">Montant du don</legend>
-        <fieldset class="grid grid-cols-2 gap-2">
+      <!-- 50$ montant -->
+      <legend class="font-bold">Montant du don</legend>
+      <fieldset aria-describedby="erreur-montant" class="grid grid-cols-2 gap-2">
 
-          <div>
-            <input type="radio" id="montant-50" name="montant" value="50" class="peer sr-only">
-            <label for="montant-50"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">50
-              $</label>
-          </div>
+        <div>
+          <input type="radio" id="montant-50" name="montant" value="50" class="peer sr-only">
+          <label for="montant-50"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">50
+            $</label>
+        </div>
 
-          <!-- 100$ montant -->
-          <div><input type="radio" id="montant-100" name="montant" value="100" class="peer sr-only">
-            <label for="montant-100"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">100
-              $</label>
-          </div>
+        <!-- 100$ montant -->
+        <div><input type="radio" id="montant-100" name="montant" value="100" class="peer sr-only">
+          <label for="montant-100"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">100
+            $</label>
+        </div>
 
-          <!-- 250$ montant -->
-          <div>
-            <input type="radio" id="montant-250" name="montant" value="250" class="peer sr-only">
-            <label for="montant-250"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">250
-              $</label>
-          </div>
+        <!-- 250$ montant -->
+        <div>
+          <input type="radio" id="montant-250" name="montant" value="250" class="peer sr-only">
+          <label for="montant-250"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">250
+            $</label>
+        </div>
 
-          <!-- 500$ montant -->
-          <div> <input type="radio" id="montant-500" name="montant" value="500" class="peer sr-only">
-            <label for="montant-500"
-              class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">500
-              $</label>
-          </div>
+        <!-- 500$ montant -->
+        <div> <input type="radio" id="montant-500" name="montant" value="500" class="peer sr-only">
+          <label for="montant-500"
+            class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">500
+            $</label>
+        </div>
 
-          <div class="grid col-span-2">
-            <label for="autre-montant-valeur" class="font-bold block mb-2">Autre montant</label>
-            <input type="number" id="autre-montant-valeur" name="montant-autre-valeur" min="5" max="1000000000" step="1"
-              placeholder="0 $"
-              class="block w-full border rounded p-4 text-left focus:bg-oxfam-vert focus:text-white focus:placeholder-white">
-          </div>
+        <div class="grid col-span-2">
+          <label for="autre-montant-valeur" class="font-bold block mb-2">Autre montant</label>
+          <input type="number" id="autre-montant-valeur" name="montant-autre-valeur" min="5" max="1000000000" step="1"
+            placeholder="0 $"
+            class="block w-full border rounded p-4 text-left focus:bg-oxfam-vert focus:text-white focus:placeholder-white">
+        </div>
 
+        <div class="flex items-center gap-1" id="conteneur-erreur-montant">
+        <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-montant">
+        <span id="erreur-montant" role="alert" class="text-red-700 text-sm"></span>
+      </div>
 
-
-          <button type="button" id="continuer1"
-            class="w-full bg-oxfam-vert-fonce hover:bg-green-900 text-white font-bold py-3 rounded col-span-2 text-xl">Continuer</button>
-
-
-        </fieldset>
-
+        <button type="button" id="continuer1"
+          class="w-full bg-oxfam-vert-fonce hover:bg-green-900 text-white font-bold py-3 rounded col-span-2 text-xl">Continuer</button>
 
       </fieldset>
+
+    
+
+
+     
 
     </section>
 

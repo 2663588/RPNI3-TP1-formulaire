@@ -82,8 +82,10 @@ function initialiser() {
 
     //Changer de pages en pages 
     document.getElementById("continuer1")?.addEventListener("click", () => {
+    if (validerEtape(1)) {
         naviguerEtape(2);
-    });
+    }
+});
 
     document.getElementById("retour2")?.addEventListener("click", () => {
         naviguerEtape(1);
@@ -97,6 +99,7 @@ function initialiser() {
     document.getElementById("retour3")?.addEventListener("click", () => {
         naviguerEtape(2);
     });
+
 
 }
 
@@ -207,13 +210,40 @@ function validerChamp(champ: HTMLInputElement): boolean {
 
 
 
+// Validation première page 1
+
+function validerGroupeRadio(nomGroupe: string, idErreur: string): boolean {
+    const radioCoche = document.querySelector(`input[name="${nomGroupe}"]:checked`);
+    const erreurElement = document.getElementById(idErreur);
+    const icone = document.getElementById("icone-erreur-" + nomGroupe);
+
+    if (!radioCoche) {
+        if (erreurElement) erreurElement.textContent = messagesJSON[nomGroupe]?.vide || "Veuillez faire un choix.";
+        icone?.classList.remove("hidden");
+        return false;
+    } else {
+        if (erreurElement) erreurElement.textContent = "";
+        icone?.classList.add("hidden");
+        return true;
+    }
+}
 
 
+
+
+// Valider page 2
 
 function validerEtape(etape: number): boolean {
     let etapeValide = true;
 
-    if (etape === 2) {
+
+    if (etape === 1) {
+        const typeDonValide = validerGroupeRadio("type-don", "erreur-type-don");
+        const montantValide = validerGroupeRadio("montant", "erreur-montant");
+        etapeValide = typeDonValide && montantValide;
+    }
+
+    else if (etape === 2) {
         const nomElement = document.getElementById('nom-complet') as HTMLInputElement;
         const prenomElement = document.getElementById('prenom-complet') as HTMLInputElement;
         const adresseElement = document.getElementById('adresse') as HTMLInputElement;
