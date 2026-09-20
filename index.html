@@ -20,6 +20,7 @@
   <div id="app"></div>
 
   <div class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4 mb-4">
+    <!-- en-tête avec le logo et le titre -->
     <header class="flex items-center gap-4 border-b-2 border-oxfam-vert-fonce pb-4">
       <img src="/favicon.svg" alt="Oxfam Canada" class="w-25 h-auto">
       <h1 class="font-bold italic text-[26px] titre-principal">OXFAM — FAIRE UN DON</h1>
@@ -27,6 +28,7 @@
 
     </header>
 
+    <!-- navigation entre les étapes -->
     <nav aria-label="Étapes du don">
       <ol class="flex justify-between italic font-light text-[9px] nav-etapes-texte">
         <li>
@@ -54,6 +56,7 @@
           </button>
         </li>
       </ol>
+      <!-- barre qui montre la progression -->
       <div class="w-full bg-gray-200 h-2 rounded border-2 border-black overflow-hidden" role="progressbar"
         aria-valuenow="1" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
         <div id="barre-progression" class="h-full bg-oxfam-vert-fonce h-2 rounded" style="width: 25%;"></div>
@@ -64,6 +67,7 @@
 
   <main>
 
+    <!-- formulaire principal pour faire un don -->
     <form class="text-xl">
 
 
@@ -77,6 +81,7 @@
 
           <legend class="font-bold text-2xl">Étape 1 — Type et montant du don</legend>
 
+          <!-- choix du type de don (unique ou mensuel) -->
           <legend class="font-bold">Type du don</legend>
           <fieldset role="radiogroup" aria-required="true" aria-describedby="erreur-type-don"
             class="grid grid-cols-1 gap-2 fieldset-type-don">
@@ -92,6 +97,8 @@
                 class="w-5 h-5 border-2 border-oxfam-vert accent-oxfam-vert">
               <label for="don-mensuel">Don mensuel</label>
             </div>
+
+            <!-- message d'erreur pour le type de don -->
           </fieldset>
           <div class="flex items-center gap-1" id="conteneur-erreur-type-don">
             <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-type-don">
@@ -99,11 +106,12 @@
           </div>
         </fieldset>
 
+        <!-- choix du montant du don -->
 
-        <!-- 50$ montant -->
         <legend class="font-bold">Montant du don</legend>
         <fieldset aria-describedby="erreur-montant" class="grid grid-cols-2 gap-2">
 
+          <!-- 50$ montant -->
           <div>
             <input type="radio" id="montant-50" name="montant" value="50" class="peer sr-only">
             <label for="montant-50"
@@ -133,6 +141,7 @@
               $</label>
           </div>
 
+          <!-- champ pour écrire un autre montant -->
           <div class="grid col-span-2">
             <label for="autre-montant-valeur" class="font-bold block mb-2">Autre montant</label>
             <input type="number" id="autre-montant-valeur" name="montant-autre-valeur" min="5" max="1000000000" step="1"
@@ -140,11 +149,13 @@
               class="block w-full border rounded p-4 text-left focus:bg-oxfam-vert focus:text-white focus:placeholder-white">
           </div>
 
+          <!-- message d'erreur pour le montant -->
           <div class="flex items-center gap-1" id="conteneur-erreur-montant">
             <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-montant">
             <span id="erreur-montant" role="alert" class="text-red-700 text-sm"></span>
           </div>
 
+          <!-- bouton pour aller a l'étape suivante -->
           <button type="button" id="continuer1"
             class="w-full bg-oxfam-vert-fonce hover:bg-green-900 text-white font-bold py-3 rounded col-span-2 text-xl">Continuer</button>
 
@@ -161,9 +172,12 @@
 
       <section data-etape="2" class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
+        <!-- informations de la personne -->
         <fieldset class="space-y-4">
           <legend class="font-bold text-2xl">Étape 2 — Informations de contact</legend>
           <div class="grid grid-cols-1 gap-4">
+
+            <!-- champ pour le nom -->
             <div>
               <label for="nom-complet" class="font-bold">Nom</label>
               <input aria-describedby="erreur-nom-complet" type="text" id="nom-complet" name="nom-complet" required
@@ -175,6 +189,7 @@
               </div>
             </div>
 
+            <!-- champ pour le prénom -->
             <div>
               <label for="prenom-complet" class="font-bold">Prénom</label>
               <input aria-describedby="erreur-prenom-complet" type="text" id="prenom-complet" name="prenom-complet"
@@ -186,6 +201,7 @@
               </div>
             </div>
 
+            <!-- champ pour l'adresse -->
             <div>
               <label for="adresse" class="font-bold">Adresse</label>
               <input aria-describedby="erreur-adresse" type="text" id="adresse" name="adresse" required
@@ -197,6 +213,7 @@
               </div>
             </div>
 
+            <!-- champ pour le courriel -->
             <div>
               <label for="courriel" class="font-bold">Courriel</label>
               <input aria-describedby="erreur-courriel" type="email" id="courriel" name="courriel" required
@@ -207,6 +224,7 @@
               </div>
             </div>
 
+            <!-- champ pour le téléphone -->
             <div>
               <label for="telephone" class="font-bold">Téléphone</label>
               <input aria-describedby="erreur-telephone" type="tel" id="telephone" name="telephone" required
@@ -219,7 +237,7 @@
             </div>
           </div>
 
-
+          <!-- boutons retour et continuer -->
           <div class="flex gap-2">
             <button type="button" id="retour2"
               class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
@@ -235,10 +253,12 @@
 
       <section data-etape="3" class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
+        <!-- informations pour le paiement -->
         <fieldset class="space-y-4">
           <legend class="font-bold text-2xl">Étape 3 — Informations de paiement</legend>
 
           <div class="space-y-4">
+            <!-- champ pour le nom sur la carte -->
             <div>
               <label for="nom-carte" class="font-bold">Nom sur la carte</label>
               <input aria-describedby="erreur-nom-carte" type="text" id="nom-carte" name="nom-carte" required
@@ -249,6 +269,7 @@
               </div>
             </div>
 
+            <!-- champ pour le numéro de carte -->
             <div>
               <label for="numero-carte" class="font-bold">Numéro de carte</label>
               <input aria-describedby="erreur-numero-carte" type="text" id="numero-carte" name="numero-carte" required
@@ -263,10 +284,7 @@
 
 
 
-
-
-
-
+            <!-- mois, année et cvc de la carte -->
 
             <div class="grid grid-cols-3 gap-2">
               <div>
@@ -319,6 +337,7 @@
             </div>
           </div>
 
+          <!-- boutons retour et faire le don -->
           <div class="flex gap-2">
             <button type="button" id="retour3"
               class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
@@ -335,17 +354,18 @@
 
       <section data-etape="4" class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
-
+        <!-- message de confirmation du don -->
         <fieldset class="space-y-4">
           <legend class="font-bold text-2xl">Étape 4 — Confirmation</legend>
 
           <div class="text-center space-y-4">
+            <!-- icône de confirmation -->
             <div class="flex justify-center">
               <img src="/SVG/icone-confirmation.svg" class="w-30" alt="">
             </div>
 
             <legend class="font-bold text-2xl">Merci pour votre don !</legend>
-
+            <!-- message de remerciement -->
             <p role="status" aria-live="polite">
 
               Merci sincèrement pour votre généreux don à Oxfam.
@@ -357,12 +377,14 @@
             </p>
           </div>
 
+          <!-- résumé du don -->
           <div class="border rounded p-4 space-y-2 bg-oxfam-creme">
             <legend class="font-bold">Résumé de votre don:</legend>
             <p><span class="font-bold">Montant :</span> <span id="resume-montant">—</span></p>
             <p><span class="font-bold">Type :</span> <span id="resume-type">—</span></p>
           </div>
 
+          <!-- bouton pour retourner à l'accueil -->
           <div class="flex justify-center">
             <button type="button" id="retour4"
               class="w-full border border-black font-bold py-3 rounded  hover:bg-yellow-500 bg-oxfam-jaune hover:text-black active:bg-oxfam-jaune">Retour
@@ -380,8 +402,8 @@
 
   </main>
 
+<!-- pied de page vide pour le moment -->
   <footer></footer>
-
 
   <script type="module" src="/src/main.ts"></script>
 </body>
