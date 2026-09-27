@@ -77,7 +77,11 @@
 
         <fieldset class="space-y-4">
 
-          <legend class="font-bold text-2xl legende-etape">Étape 1 — Type et montant du don</legend>
+          <div class="space-y-0">
+            <legend class="font-bold text-2xl legende-etape">Étape 1 — Type et montant du don</legend>
+            <p class="text-sm italic text-gray-600">Chaque don, petit ou grand, fait une réelle différence. Choisissez
+              celui qui vous convient.</p>
+          </div>
 
           <!-- choix du type de don (unique ou mensuel) -->
           <legend class="font-bold legende-etape__sous-titre">Type du don</legend>
@@ -118,11 +122,17 @@
           </div>
 
           <!-- 100$ montant -->
-          <div><input type="radio" id="montant-100" name="montant" value="100" class="peer sr-only">
+          <div class="relative">
+            <span
+              class="badge-populaire absolute -top-2 -right-2 bg-oxfam-jaune text-black text-xs font-bold italic px-2 py-0.5 rounded-full">
+              Le montant préféré de nos donateurs.
+            </span>
+            <input type="radio" id="montant-100" name="montant" value="100" class="peer sr-only">
             <label for="montant-100"
               class="block border rounded p-4 text-center cursor-pointer peer-checked:bg-oxfam-vert peer-checked:text-white text-xl">100
               $</label>
           </div>
+
 
           <!-- 250$ montant -->
           <div>
@@ -142,9 +152,11 @@
           <!-- champ pour écrire un autre montant -->
           <div class="grid col-span-2">
             <label for="autre-montant-valeur" class="font-bold block mb-2">Autre montant</label>
-            <input type="number" id="autre-montant-valeur" name="montant-autre-valeur" min="5" max="1000000000" step="1"
-              placeholder="0 $"
+            <input aria-describedby="aide-autre-montant" type="number" id="autre-montant-valeur"
+              name="montant-autre-valeur" min="5" max="1000000000" step="1" placeholder="0 $"
               class="block w-full border rounded p-4 text-left focus:bg-oxfam-vert focus:text-white focus:placeholder-white">
+            <p id="aide-autre-montant" class="text-sm italic text-gray-600 mt-1">Le montant minimal d'un don est de 5 $.
+            </p>
           </div>
 
           <!-- message d'erreur pour le montant -->
@@ -171,7 +183,10 @@
 
         <!-- informations de la personne -->
         <fieldset class="space-y-4">
-          <legend class="font-bold text-2xl legende-etape">Étape 2 — Informations de contact</legend>
+          <div class="space-y-0">
+            <legend class="font-bold text-2xl legende-etape">Étape 2 — Informations de contact</legend>
+            <p class="text-sm italic text-gray-600">Indiquez vos coordonnées pour finaliser votre don.</p>
+          </div>
           <div class="grid grid-cols-1 gap-4">
 
             <!-- champ pour le nom -->
@@ -201,7 +216,8 @@
             <!-- champ pour l'adresse -->
             <div>
               <label for="adresse" class="font-bold">Adresse</label>
-              <input aria-describedby="erreur-adresse" type="text" id="adresse" name="adresse" required
+              <p id="aide-adresse" class="text-sm italic text-gray-600">Entrez votre adresse complète.</p>
+              <input aria-describedby="aide-adresse erreur-adresse" type="text" id="adresse" name="adresse" required
                 autocomplete="street-address" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$"
                 class="block w-full border rounded p-2">
               <div class="flex items-center gap-1" id="conteneur-erreur-adresse">
@@ -213,8 +229,10 @@
             <!-- champ pour le courriel -->
             <div>
               <label for="courriel" class="font-bold">Courriel</label>
-              <input aria-describedby="erreur-courriel" type="email" id="courriel" name="courriel" required
-                autocomplete="email" class="block w-full border rounded p-2">
+              <p id="aide-courriel" class="text-sm italic text-gray-600">Votre adresse courriel sera utilisée pour vous
+                envoyer la confirmation de votre don.</p>
+              <input aria-describedby="aide-courriel erreur-courriel" type="email" id="courriel" name="courriel"
+                required autocomplete="email" class="block w-full border rounded p-2">
               <div class="flex items-center gap-1" id="conteneur-erreur-courriel">
                 <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-courriel">
                 <span id="erreur-courriel" role="alert" class="text-red-700 text-sm"></span>
@@ -223,7 +241,8 @@
 
             <!-- champ pour le téléphone -->
             <div>
-              <label for="telephone" class="font-bold">Téléphone</label>
+              <label for="telephone" class="font-bold">Téléphone <span
+                  class="font-normal text-gray-500 text-sm">(facultatif)</span></label>
               <input aria-describedby="erreur-telephone" type="tel" id="telephone" name="telephone" required
                 autocomplete="tel" pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$"
                 class="block w-full border rounded p-2">
@@ -250,7 +269,10 @@
 
         <!-- informations pour le paiement -->
         <fieldset class="space-y-4">
-          <legend class="font-bold text-2xl legende-etape">Étape 3 — Informations de paiement</legend>
+          <div class="space-y-0">
+            <legend class="font-bold text-2xl legende-etape">Étape 3 — Informations de paiement</legend>
+            <p class="text-sm italic text-gray-600">Vos informations de paiement sont chiffrées et traitées de façon sécurisée.</p>
+          </div>
 
           <div class="space-y-4">
             <!-- champ pour le nom sur la carte -->
@@ -267,9 +289,11 @@
             <!-- champ pour le numéro de carte -->
             <div>
               <label for="numero-carte" class="font-bold">Numéro de carte</label>
-              <input aria-describedby="erreur-numero-carte" type="text" id="numero-carte" name="numero-carte" required
-                autocomplete="cc-number" inputmode="numeric" pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
-                placeholder="1234 5678 9012 3456" class="block w-full border rounded p-2">
+              <p id="aide-numero-carte" class="text-sm text-gray-600">Entrez le numéro inscrit sur votre carte.</p>
+              <input aria-describedby="aide-numero-carte erreur-numero-carte" type="text" id="numero-carte"
+                name="numero-carte" required autocomplete="cc-number" inputmode="numeric"
+                pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$" placeholder="1234 5678 9012 3456"
+                class="block w-full border rounded p-2">
               <div class="flex items-center gap-1" id="conteneur-erreur-numero-carte">
                 <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-numero-carte">
                 <span id="erreur-numero-carte" role="alert" class="text-red-700 text-sm"></span>
@@ -284,8 +308,8 @@
             <div class="grid grid-cols-3 gap-2">
               <div>
                 <label for="mois-expiration" class="font-bold">Mois</label>
-                <select id="mois-expiration" name="mois-expiration" required autocomplete="cc-exp-month"
-                  class="block w-full border rounded p-2">
+                <select aria-describedby="erreur-mois-expiration" id="mois-expiration" name="mois-expiration" required
+                  autocomplete="cc-exp-month" class="block w-full border rounded p-2">
                   <option value="">--</option>
                   <option value="01">01</option>
                   <option value="02">02</option>
@@ -300,13 +324,18 @@
                   <option value="02">11</option>
                   <option value="02">12</option>
 
+
                 </select>
+                <div class="flex items-center gap-1" id="conteneur-erreur-mois-expiration">
+                  <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-mois-expiration">
+                  <span id="erreur-mois-expiration" role="alert" class="text-red-700 text-sm"></span>
+                </div>
               </div>
 
               <div>
                 <label for="annee-expiration" class="font-bold">Année</label>
-                <select id="annee-expiration" name="annee-expiration" required autocomplete="cc-exp-year"
-                  class="block w-full border rounded p-2">
+                <select aria-describedby="erreur-annee-expiration" id="annee-expiration" name="annee-expiration"
+                  required autocomplete="cc-exp-year" class="block w-full border rounded p-2">
                   <option value="">--</option>
                   <option value="2026">2026</option>
                   <option value="2027">2027</option>
@@ -318,10 +347,14 @@
                   <option value="2027">2033</option>
                   <option value="2027">2034</option>
                 </select>
+                <div class="flex items-center gap-1" id="conteneur-erreur-annee-expiration">
+                  <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-annee-expiration">
+                  <span id="erreur-annee-expiration" role="alert" class="text-red-700 text-sm"></span>
+                </div>
               </div>
 
               <div>
-                <label for="cvc" class="font-bold">CVC</label>
+                <label for="cvc" class="font-bold">Code de sécurité (CVC)</label>
                 <input aria-describedby="erreur-cvc" type="text" id="cvc" name="cvc" required autocomplete="cc-csc"
                   inputmode="numeric" pattern="^[0-9]{3,4}$" maxlength="4" class="block w-full border rounded p-2">
                 <div class="flex items-center gap-1" id="conteneur-erreur-cvc">
@@ -335,7 +368,8 @@
           <!-- boutons retour et faire le don -->
           <div class="flex gap-2">
             <button type="button" id="retour3" class="bouton-secondaire">Retour</button>
-            <button type="submit" id="soumettre3" class="bouton-principal bouton-principal--soumission">Faire le don</button>
+            <button type="submit" id="soumettre3" class="bouton-principal bouton-principal--soumission">Faire le
+              don</button>
           </div>
 
 

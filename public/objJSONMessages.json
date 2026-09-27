@@ -38,8 +38,14 @@
         "vide": "Veuillez entrer votre numéro de carte.",
         "pattern": "Veuillez entrer un numéro de carte valide."
     },
+    "mois-expiration": {
+        "vide": "Veuillez sélectionner le mois d'expiration."
+    },
+    "annee-expiration": {
+        "vide": "Veuillez sélectionner l'année d'expiration."
+    },
     "cvc": {
-        "vide": "Veuillez entrer votre code CVC.",
+        "vide": "Veuillez entrer votre code CVC à 3 chiffres.",
         "pattern": "Veuillez entrer un code CVC valide."
     }
 

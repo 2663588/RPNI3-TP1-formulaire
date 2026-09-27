@@ -28,9 +28,17 @@ body {
 }
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
@@ -44,16 +52,12 @@ label {
 }
 
 
-/* 
-   LAYOUT — structure générale des grandes zones de la page
-    */
-
-/* (réservé pour d'éventuelles règles de mise en page globale) */
-
 
 /* 
    MODULE — composants réutilisables (nomenclature BEM)
     */
+
+
 
 .titre-principal {
   letter-spacing: -0.02em;
@@ -131,7 +135,7 @@ input {
     */
 
 @media screen and (min-width: 360px) {
-  
+
 
   .max-w-xl {
     max-width: 100rem;
@@ -146,7 +150,7 @@ input {
     padding: 1.5rem;
   }
 
-  .space-y-4 > * + * {
+  .space-y-4>*+* {
     margin-top: 1.5rem;
   }
 
@@ -161,6 +165,10 @@ input {
   .nav-etapes-texte {
     font-size: 1rem;
   }
+
+  
+
+
 }
 
 @media screen and (min-width: 630px) {
@@ -180,4 +188,19 @@ input {
   .nav-etapes-texte {
     font-size: xx-small;
   }
+
+  
+}
+
+
+
+@media screen and (max-width: 630px) {
+
+/* reduire la taille du badge populaire montant*/
+  .badge-populaire {
+    font-size: 0.5rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
 }

@@ -71,8 +71,8 @@ function initialiser() {
 
 
 
-   
-    
+
+
 
 
 
@@ -185,7 +185,7 @@ function afficherResume() {
 
 
 
-function validerChamp(champ: HTMLInputElement): boolean {
+function validerChamp(champ: HTMLInputElement | HTMLSelectElement): boolean {
     let valide = false;
     const id = champ.id;
     const idMessageErreur = "erreur-" + id;
@@ -293,18 +293,19 @@ function validerEtape(etape: number): boolean {
     }
 
     else if (etape === 3) {
-
         const nomcarteElement = document.getElementById('nom-carte') as HTMLInputElement;
         const numerocarteElement = document.getElementById('numero-carte') as HTMLInputElement;
+        const moisElement = document.getElementById('mois-expiration') as HTMLSelectElement;
+        const anneeElement = document.getElementById('annee-expiration') as HTMLSelectElement;
         const cvcElement = document.getElementById('cvc') as HTMLInputElement;
-
 
         const nomcarteValide = validerChamp(nomcarteElement);
         const numerocarteValide = validerChamp(numerocarteElement);
+        const moisValide = validerChamp(moisElement);
+        const anneeValide = validerChamp(anneeElement);
         const cvcValide = validerChamp(cvcElement);
 
-
-        etapeValide = nomcarteValide && numerocarteValide && cvcValide;
+        etapeValide = nomcarteValide && numerocarteValide && moisValide && anneeValide && cvcValide;
     }
 
     return etapeValide;
