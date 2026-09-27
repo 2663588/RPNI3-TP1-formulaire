@@ -77,10 +77,10 @@
 
         <fieldset class="space-y-4">
 
-          <legend class="font-bold text-2xl">Étape 1 — Type et montant du don</legend>
+          <legend class="font-bold text-2xl legende-etape">Étape 1 — Type et montant du don</legend>
 
           <!-- choix du type de don (unique ou mensuel) -->
-          <legend class="font-bold">Type du don</legend>
+          <legend class="font-bold legende-etape__sous-titre">Type du don</legend>
           <fieldset role="radiogroup" aria-required="true" aria-describedby="erreur-type-don"
             class="grid grid-cols-1 gap-2 fieldset-type-don">
             <div
@@ -106,7 +106,7 @@
 
         <!-- choix du montant du don -->
 
-        <legend class="font-bold">Montant du don</legend>
+        <legend class="font-bold legende-etape__sous-titre">Montant du don</legend>
         <fieldset aria-describedby="erreur-montant" class="grid grid-cols-2 gap-2">
 
           <!-- 50$ montant -->
@@ -154,8 +154,7 @@
           </div>
 
           <!-- bouton pour aller a l'étape suivante -->
-          <button type="button" id="continuer1"
-            class="w-full bg-oxfam-vert-fonce hover:bg-green-900 text-white font-bold py-3 rounded col-span-2 text-xl">Continuer</button>
+          <button type="button" id="continuer1" class="bouton-principal col-span-2 text-xl">Continuer</button>
 
         </fieldset>
 
@@ -172,7 +171,7 @@
 
         <!-- informations de la personne -->
         <fieldset class="space-y-4">
-          <legend class="font-bold text-2xl">Étape 2 — Informations de contact</legend>
+          <legend class="font-bold text-2xl legende-etape">Étape 2 — Informations de contact</legend>
           <div class="grid grid-cols-1 gap-4">
 
             <!-- champ pour le nom -->
@@ -237,10 +236,8 @@
 
           <!-- boutons retour et continuer -->
           <div class="flex gap-2">
-            <button type="button" id="retour2"
-              class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
-            <button type="button" id="continuer2"
-              class="w-full bg-oxfam-vert-fonce hover:bg-green-900 text-white font-bold py-3 rounded">Continuer</button>
+            <button type="button" id="retour2" class="bouton-secondaire">Retour</button>
+            <button type="button" id="continuer2" class="bouton-principal">Continuer</button>
           </div>
 
 
@@ -253,7 +250,7 @@
 
         <!-- informations pour le paiement -->
         <fieldset class="space-y-4">
-          <legend class="font-bold text-2xl">Étape 3 — Informations de paiement</legend>
+          <legend class="font-bold text-2xl legende-etape">Étape 3 — Informations de paiement</legend>
 
           <div class="space-y-4">
             <!-- champ pour le nom sur la carte -->
@@ -337,10 +334,8 @@
 
           <!-- boutons retour et faire le don -->
           <div class="flex gap-2">
-            <button type="button" id="retour3"
-              class="w-full border border-black font-bold py-3 rounded hover:bg-black hover:text-white">Retour</button>
-            <button type="submit" id="soumettre3"
-              class="w-full bg-oxfam-rose hover:bg-pink-800 text-white font-bold py-3 rounded">Faire le don</button>
+            <button type="button" id="retour3" class="bouton-secondaire">Retour</button>
+            <button type="submit" id="soumettre3" class="bouton-principal bouton-principal--soumission">Faire le don</button>
           </div>
 
 
