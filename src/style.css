@@ -107,7 +107,7 @@ label {
 
 
 /* 
-   STATE — états visuels temporaires (masqué, actif, etc.)
+   STATE — états visuels temporaires
     */
 
 .texte-desktop {
@@ -116,7 +116,7 @@ label {
 
 
 /* 
-   THEME — effets visuels transverses (transitions, animations d'interaction)
+   THEME — effets visuels transverses
     */
 
 button,
@@ -168,7 +168,7 @@ input {
   .fieldset-type-don {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
+
   .texte-mobile {
     display: none;
   }

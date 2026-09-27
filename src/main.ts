@@ -13,6 +13,8 @@ interface erreursJSON {
 }
 let messagesJSON: erreursJSON;
 
+let etapeMaxAtteinte: number = 1;
+
 async function chargerMessages() {
     const reponse = await fetch('./objJSONMessages.json');
     messagesJSON = await reponse.json();
@@ -35,7 +37,9 @@ function initialiser() {
 
         bouton.addEventListener("click", () => {
             const cible = Number(bouton.getAttribute("data-cible-etape"));
-            naviguerEtape(cible);
+            if (cible <= etapeMaxAtteinte) {
+                naviguerEtape(cible);
+            }
 
         });
 
@@ -67,24 +71,15 @@ function initialiser() {
 
 
 
-    // Reinitialiser le formulaire au complet
-    document.getElementById("retour4")?.addEventListener("click", () => {
-        const monFormulaire = document.querySelector("form") as HTMLFormElement;
-        monFormulaire.reset();
-
-        const spanMontant = document.getElementById("resume-montant");
-        const spanType = document.getElementById("resume-type");
-        if (spanMontant) spanMontant.textContent = "—";
-        if (spanType) spanType.textContent = "—";
-
-        naviguerEtape(1);
-    });
+   
+    
 
 
 
     //Changer de pages en pages 
     document.getElementById("continuer1")?.addEventListener("click", () => {
         if (validerEtape(1)) {
+            etapeMaxAtteinte = 2;
             naviguerEtape(2);
         }
     });
@@ -92,8 +87,10 @@ function initialiser() {
     document.getElementById("retour2")?.addEventListener("click", () => {
         naviguerEtape(1);
     });
+
     document.getElementById("continuer2")?.addEventListener("click", () => {
         if (validerEtape(2)) {
+            etapeMaxAtteinte = 3;
             naviguerEtape(3);
         }
     });
