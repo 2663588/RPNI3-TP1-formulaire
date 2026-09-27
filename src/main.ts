@@ -14,9 +14,11 @@ interface erreursJSON {
 let messagesJSON: erreursJSON;
 
 async function chargerMessages() {
-    const reponse = await fetch('/objJSONMessages.json');
+    const reponse = await fetch('./objJSONMessages.json');
     messagesJSON = await reponse.json();
 }
+
+
 
 chargerMessages().then(() => {
     initialiser();
@@ -82,10 +84,10 @@ function initialiser() {
 
     //Changer de pages en pages 
     document.getElementById("continuer1")?.addEventListener("click", () => {
-    if (validerEtape(1)) {
-        naviguerEtape(2);
-    }
-});
+        if (validerEtape(1)) {
+            naviguerEtape(2);
+        }
+    });
 
     document.getElementById("retour2")?.addEventListener("click", () => {
         naviguerEtape(1);
@@ -98,6 +100,14 @@ function initialiser() {
 
     document.getElementById("retour3")?.addEventListener("click", () => {
         naviguerEtape(2);
+    });
+
+
+
+    document.querySelectorAll('input[required], input[pattern]').forEach((champ) => {
+        champ.addEventListener('blur', () => {
+            validerChamp(champ as HTMLInputElement);
+        });
     });
 
 
