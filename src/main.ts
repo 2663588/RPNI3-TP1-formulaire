@@ -167,10 +167,18 @@ function afficherResume() {
     const typeCoche = document.querySelector('input[name="type-don"]:checked') as HTMLInputElement;
     const typeAffiche = typeCoche ? (typeCoche.value === "unique" ? "Don unique" : "Don mensuel") : "—";
 
+    const nom = (document.getElementById("nom-complet") as HTMLInputElement)?.value || "—";
+    const prenom = (document.getElementById("prenom-complet") as HTMLInputElement)?.value || "—";
+    const courriel = (document.getElementById("courriel") as HTMLInputElement)?.value || "—";
+    const telephone = (document.getElementById("telephone") as HTMLInputElement)?.value || "—";
+
     sessionStorage.setItem("resumeMontant", montantAffiche);
     sessionStorage.setItem("resumeType", typeAffiche);
+    sessionStorage.setItem("resumeNom", nom);
+    sessionStorage.setItem("resumePrenom", prenom);
+    sessionStorage.setItem("resumeCourriel", courriel);
+    sessionStorage.setItem("resumeTelephone", telephone);
 }
-
 
 
 
