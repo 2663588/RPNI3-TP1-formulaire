@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merci - Oxfam Canada</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+    </style>
+</head>
+
+<body class="bg-gray-100 p-4 md:p-8 min-h-screen">
+
+    <div class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4 mb-4">
+        <header class="flex items-center gap-4 border-b-2 border-oxfam-vert-fonce pb-4">
+            <img src="/favicon.svg" alt="Oxfam Canada" class="w-25 h-auto">
+            <h1 class="font-bold italic text-[26px] titre-principal">OXFAM — FAIRE UN DON</h1>
+        </header>
+
+        <nav aria-label="Étapes du don">
+            <ol class="flex justify-between italic font-light text-[9px] nav-etapes-texte">
+                <li>
+                    <span class="texte-mobile">Étape 1</span>
+                    <span class="texte-desktop text-[15px]">1. TYPE ET MONTANT</span>
+                </li>
+                <li>
+                    <span class="texte-mobile">Étape 2</span>
+                    <span class="texte-desktop text-[15px]">2. COORDONNÉES</span>
+                </li>
+                <li>
+                    <span class="texte-mobile">Étape 3</span>
+                    <span class="texte-desktop text-[15px]">3. PAIEMENT</span>
+                </li>
+                <li class="font-bold">
+                    <span class="texte-mobile">Étape 4</span>
+                    <span class="texte-desktop text-[15px]">4. CONFIRMATION</span>
+                </li>
+            </ol>
+            <div class="w-full bg-gray-200 h-2 rounded border-2 border-black overflow-hidden" role="progressbar"
+                aria-valuenow="4" aria-valuemin="0" aria-valuemax="4" aria-label="Progression du formulaire">
+                <div class="h-full bg-oxfam-vert-fonce h-2 rounded" style="width: 100%;"></div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
+
+        <!-- message de confirmation du don -->
+        <div class="space-y-4">
+            <legend class="font-bold text-2xl">Confirmation</legend>
+
+            <div class="text-center space-y-4">
+                <!-- icône de confirmation -->
+                <div class="flex justify-center">
+                    <img src="/SVG/icone-confirmation.svg" class="w-30" alt="">
+                </div>
+
+                <legend class="font-bold text-2xl">Merci pour votre don !</legend>
+                <!-- message de remerciement -->
+                <p role="status" aria-live="polite">
+                    Merci sincèrement pour votre généreux don à Oxfam.
+                    Votre soutien contribue concrètement à bâtir un monde plus juste et solidaire.
+                    Un reçu de confirmation vous sera envoyé par courriel sous peu.
+                </p>
+            </div>
+
+            <!-- résumé du don -->
+            <div class="border rounded p-4 space-y-2 bg-oxfam-creme">
+                <legend class="font-bold">Résumé de votre don:</legend>
+                <p><span class="font-bold">Montant :</span> <span id="resume-montant">—</span></p>
+                <p><span class="font-bold">Type :</span> <span id="resume-type">—</span></p>
+            </div>
+
+            <!-- bouton pour retourner à l'accueil -->
+            <div class="flex justify-center">
+                <a href="index.html"
+                    class="w-full text-center border border-black font-bold py-3 rounded hover:bg-yellow-500 bg-oxfam-jaune hover:text-black block">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="/src/merci.ts"></script>
+</body>
+
+</html>

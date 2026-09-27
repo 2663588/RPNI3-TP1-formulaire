@@ -50,10 +50,8 @@
           </button>
         </li>
         <li>
-          <button type="button" data-cible-etape="4">
-            <span class="texte-mobile ">Étape 4</span>
-            <span class="texte-desktop text-[15px]">4. CONFIRMATION</span>
-          </button>
+          <span class="texte-mobile">Étape 4</span>
+          <span class="texte-desktop text-[15px]">4. CONFIRMATION</span>
         </li>
       </ol>
       <!-- barre qui montre la progression -->
@@ -273,7 +271,7 @@
             <div>
               <label for="numero-carte" class="font-bold">Numéro de carte</label>
               <input aria-describedby="erreur-numero-carte" type="text" id="numero-carte" name="numero-carte" required
-                autocomplete="cc-number" inputmode="numeric" pattern="^[6][0-9]{3}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
+                autocomplete="cc-number" inputmode="numeric" pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
                 placeholder="1234 5678 9012 3456" class="block w-full border rounded p-2">
               <div class="flex items-center gap-1" id="conteneur-erreur-numero-carte">
                 <img src="/SVG/icon-erreur.svg" alt="" class="w-4 h-4 hidden" id="icone-erreur-numero-carte">
@@ -352,55 +350,13 @@
 
       <!-- QUATRIÈME PAGE -->
 
-      <section data-etape="4" class="max-w-xl mx-auto bg-white border rounded-lg shadow-lg p-4 space-y-4">
 
-        <!-- message de confirmation du don -->
-        <fieldset class="space-y-4">
-          <legend class="font-bold text-2xl">Étape 4 — Confirmation</legend>
-
-          <div class="text-center space-y-4">
-            <!-- icône de confirmation -->
-            <div class="flex justify-center">
-              <img src="/SVG/icone-confirmation.svg" class="w-30" alt="">
-            </div>
-
-            <legend class="font-bold text-2xl">Merci pour votre don !</legend>
-            <!-- message de remerciement -->
-            <p role="status" aria-live="polite">
-
-              Merci sincèrement pour votre généreux don à Oxfam.
-
-              Votre soutien contribue concrètement à bâtir un monde plus juste et solidaire.
-
-              Un reçu de confirmation vous sera envoyé par courriel sous peu.
-
-            </p>
-          </div>
-
-          <!-- résumé du don -->
-          <div class="border rounded p-4 space-y-2 bg-oxfam-creme">
-            <legend class="font-bold">Résumé de votre don:</legend>
-            <p><span class="font-bold">Montant :</span> <span id="resume-montant">—</span></p>
-            <p><span class="font-bold">Type :</span> <span id="resume-type">—</span></p>
-          </div>
-
-          <!-- bouton pour retourner à l'accueil -->
-          <div class="flex justify-center">
-            <button type="button" id="retour4"
-              class="w-full border border-black font-bold py-3 rounded  hover:bg-yellow-500 bg-oxfam-jaune hover:text-black active:bg-oxfam-jaune">Retour
-              à
-              l'accueil</button>
-          </div>
-
-        </fieldset>
-
-      </section>
 
     </form>
 
   </main>
 
-<!-- pied de page vide pour le moment -->
+  <!-- pied de page vide pour le moment -->
   <footer></footer>
 
   <script type="module" src="/src/main.ts"></script>

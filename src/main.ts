@@ -61,7 +61,7 @@ function initialiser() {
         evenement.preventDefault();
         if (validerEtape(3)) {
             afficherResume();
-            naviguerEtape(4);
+            window.location.href = "merci.html";
         }
     });
 
@@ -170,10 +170,8 @@ function afficherResume() {
     const typeCoche = document.querySelector('input[name="type-don"]:checked') as HTMLInputElement;
     const typeAffiche = typeCoche ? (typeCoche.value === "unique" ? "Don unique" : "Don mensuel") : "—";
 
-    const spanMontant = document.getElementById("resume-montant");
-    const spanType = document.getElementById("resume-type");
-    if (spanMontant) spanMontant.textContent = montantAffiche;
-    if (spanType) spanType.textContent = typeAffiche;
+    sessionStorage.setItem("resumeMontant", montantAffiche);
+    sessionStorage.setItem("resumeType", typeAffiche);
 }
 
 
