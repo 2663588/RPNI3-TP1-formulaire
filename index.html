@@ -66,7 +66,7 @@
   <main>
 
     <!-- formulaire principal pour faire un don -->
-    <form class="text-xl">
+    <form action="./merci.html" method="get" class="text-xl">
 
 
       <!-- PREMIÈRE PAGE -->
@@ -77,16 +77,18 @@
 
         <fieldset class="space-y-4">
 
-          <div class="space-y-0">
+
+          <div class="space-y-1">
             <legend class="font-bold text-2xl legende-etape">Étape 1 — Type et montant du don</legend>
             <p class="text-sm italic text-gray-600">Chaque don, petit ou grand, fait une réelle différence. Choisissez
               celui qui vous convient.</p>
           </div>
 
+
           <!-- choix du type de don (unique ou mensuel) -->
-          <legend class="font-bold legende-etape__sous-titre">Type du don</legend>
           <fieldset role="radiogroup" aria-required="true" aria-describedby="erreur-type-don"
             class="grid grid-cols-1 gap-2 fieldset-type-don">
+            <legend class="font-bold legende-etape__sous-titre">Type du don</legend>
             <div
               class="flex items-center gap-2 border rounded p-2 has-[:checked]:bg-oxfam-vert has-[:checked]:text-white">
               <input type="radio" id="don-unique" name="type-don" value="unique" required
@@ -110,8 +112,8 @@
 
         <!-- choix du montant du don -->
 
-        <legend class="font-bold legende-etape__sous-titre">Montant du don</legend>
         <fieldset aria-describedby="erreur-montant" class="grid grid-cols-2 gap-2">
+          <legend class="font-bold legende-etape__sous-titre">Montant du don</legend>
 
           <!-- 50$ montant -->
           <div>
@@ -241,8 +243,7 @@
 
             <!-- champ pour le téléphone -->
             <div>
-              <label for="telephone" class="font-bold">Téléphone <span
-                  class="font-normal text-gray-500 text-sm">(facultatif)</span></label>
+              <label for="telephone" class="font-bold">Téléphone</label>
               <input aria-describedby="erreur-telephone" type="tel" id="telephone" name="telephone" required
                 autocomplete="tel" pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$"
                 class="block w-full border rounded p-2">
@@ -271,7 +272,8 @@
         <fieldset class="space-y-4">
           <div class="space-y-0">
             <legend class="font-bold text-2xl legende-etape">Étape 3 — Informations de paiement</legend>
-            <p class="text-sm italic text-gray-600">Vos informations de paiement sont chiffrées et traitées de façon sécurisée.</p>
+            <p class="text-sm italic text-gray-600">Vos informations de paiement sont chiffrées et traitées de façon
+              sécurisée.</p>
           </div>
 
           <div class="space-y-4">
